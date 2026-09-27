@@ -3,10 +3,12 @@ workflows:
     name: Android Build
     max_build_duration: 30
     instance_type: mac_mini_m1
+    environment:
+      flutter: stable
     scripts:
-      - name: Create Flutter Project Structure
+      - name: Initialize Flutter Project
         script: |
-          flutter create . --org com.madar.app --platforms android
+          flutter create . --org com.madar.system --platforms android
       - name: Get dependencies
         script: |
           flutter pub get
